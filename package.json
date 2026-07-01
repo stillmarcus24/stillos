@@ -2,7 +2,15 @@
   "name": "stillos-mcp",
   "version": "1.0.0",
   "description": "StillOS MCP server — calibrated Kalshi prediction signals + tamper-evident notarization",
-  "keywords": ["mcp", "mcp-server", "kalshi", "prediction-markets", "notarization", "x402", "brier"],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "kalshi",
+    "prediction-markets",
+    "notarization",
+    "x402",
+    "brier"
+  ],
   "main": "stillos_mcp_server.cjs",
   "bin": {
     "stillos-mcp": "stillos_mcp_server.cjs"
@@ -14,5 +22,8 @@
     "type": "git",
     "url": "https://github.com/stillmarcus24/stillos.git"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.stillmarcus24/stillos"
 }
