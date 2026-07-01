@@ -1,0 +1,106 @@
+name: stillos
+displayName: "StillOS — Calibrated Prediction Signals + Notary"
+description: |
+  Calibrated probability signals for Kalshi CPI and GDP prediction markets,
+  plus tamper-evident claim notarization. Political Brier score 0.0004 on
+  1,249 forward-committed predictions. All outputs signed Ed25519 and
+  independently verifiable. Free tier 5 signals/day. x402 USDC on Base
+  for unlimited access.
+version: "1.0.0"
+publisher: "StillOS / nolawealthfinancial.com"
+homepage: "https://nolawealthfinancial.com"
+license: "commercial"
+
+server:
+  type: stdio
+  command: node
+  args:
+    - "/home/marcus/still-os-consciousness/core/stillos_mcp_server.cjs"
+  env:
+    SIGNAL_PORT: "8456"
+    NOTARY_PORT: "8455"
+    MIL_BASE: "https://nolawealthfinancial.com"
+
+tools:
+  - name: get_cpi_signal
+    description: "Calibrated P(YES) for any Kalshi KXCPI market. Cleveland Fed Nowcast source. Returns model_p, market_p, edge_cents, signal direction, and signed receipt."
+    inputSchema:
+      type: object
+      properties:
+        ticker:
+          type: string
+          description: "Kalshi KXCPI ticker, e.g. KXCPI-26JUN-T-0.2"
+      required: [ticker]
+
+  - name: get_gdp_signal
+    description: "Calibrated P(YES) for any Kalshi KXGDP market. Atlanta Fed GDPNow source."
+    inputSchema:
+      type: object
+      properties:
+        ticker:
+          type: string
+          description: "Kalshi KXGDP ticker"
+      required: [ticker]
+
+  - name: get_active_signals
+    description: "All signals with edge >= 10 cents, ranked by edge. Use to scan for highest-EV opportunities right now."
+    inputSchema:
+      type: object
+      properties: {}
+
+  - name: commit_claim
+    description: "Notarize any claim string. Returns Ed25519-signed, hash-chained tamper-evident receipt. Permanently verifiable."
+    inputSchema:
+      type: object
+      properties:
+        agent:
+          type: string
+          description: "Your agent identity"
+        claim:
+          type: string
+          description: "Claim to notarize (immutable)"
+      required: [agent, claim]
+
+  - name: verify_receipt
+    description: "Verify any StillOS receipt by hash. Free, permissionless. Returns found/hash_intact/sig_valid."
+    inputSchema:
+      type: object
+      properties:
+        hash:
+          type: string
+          description: "receipt_hash from any StillOS output"
+      required: [hash]
+
+  - name: grade_strategy
+    description: "Submit trade history, receive REAL_EDGE|REGIME_LUCK|NEGATIVE_EV verdict with signed receipt. Min 20 trades."
+    inputSchema:
+      type: object
+      properties:
+        agent:
+          type: string
+        trades:
+          type: array
+          items:
+            type: object
+      required: [agent, trades]
+
+  - name: get_trust_record
+    description: "Read StillOS honest calibration record before trusting signals. Shows Brier scores with CALIBRATED_NEGATIVE_EV disclosures."
+    inputSchema:
+      type: object
+      properties: {}
+
+payment:
+  model: x402
+  currency: USDC
+  network: base-mainnet
+  free_tier: "5 signals/day per agent identity"
+  paid_tier: "$0.01 USDC per signal beyond free tier"
+  payment_address: "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71"
+
+trust:
+  brier_political: 0.0004
+  n_predictions: 1249
+  n_settled: 241
+  signing_key_fingerprint: "f3dcf55117d29e0a"
+  verification_url: "https://nolawealthfinancial.com/notary/verify"

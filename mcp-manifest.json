@@ -1,0 +1,73 @@
+{
+  "schema_version": "mcp-registry-v1",
+  "id": "stillos-signal-notary",
+  "name": "StillOS",
+  "tagline": "Calibrated prediction market signals + tamper-evident notarization",
+  "description": "StillOS provides calibrated probability signals for Kalshi CPI and GDP prediction markets, backed by Cleveland Fed Nowcast and Atlanta Fed GDPNow. All outputs are Ed25519-signed and hash-chained on the StillOS notary chain for independent verification. Brier score 0.0004 on political markets (1,249 forward-committed predictions). x402 USDC micropayments on Base for unlimited access beyond free tier.",
+  "author": {
+    "name": "Marcus Still / StillOS",
+    "url": "https://nolawealthfinancial.com"
+  },
+  "repository": "https://github.com/stillmarcus24/stillos",
+  "license": "commercial",
+  "categories": ["finance", "prediction-markets", "trust", "notarization"],
+  "server": {
+    "type": "stdio",
+    "runtime": "node",
+    "entrypoint": "core/stillos_mcp_server.cjs",
+    "min_node_version": "18"
+  },
+  "tools": [
+    {
+      "name": "get_cpi_signal",
+      "summary": "CPI market probability signal",
+      "free_tier": true,
+      "paid": true
+    },
+    {
+      "name": "get_gdp_signal",
+      "summary": "GDP market probability signal",
+      "free_tier": true,
+      "paid": true
+    },
+    {
+      "name": "get_active_signals",
+      "summary": "All signals with edge ≥ 10¢",
+      "free_tier": true
+    },
+    {
+      "name": "commit_claim",
+      "summary": "Notarize any claim — tamper-evident receipt",
+      "free_tier": true
+    },
+    {
+      "name": "verify_receipt",
+      "summary": "Verify any receipt hash — always free",
+      "free_tier": true
+    },
+    {
+      "name": "grade_strategy",
+      "summary": "Grade trade history → REAL_EDGE|REGIME_LUCK|NEGATIVE_EV",
+      "free_tier": true
+    },
+    {
+      "name": "get_trust_record",
+      "summary": "Read honest Brier scores before trusting signals",
+      "free_tier": true
+    }
+  ],
+  "x402": {
+    "enabled": true,
+    "network": "base-mainnet",
+    "token": "USDC",
+    "address": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+    "price_per_call": "0.01",
+    "free_limit": "5/day"
+  },
+  "discovery": {
+    "well_known": "https://nolawealthfinancial.com/.well-known/stillos.json",
+    "agent_card": "https://nolawealthfinancial.com/.well-known/agent.json",
+    "openapi": "https://nolawealthfinancial.com/identity/openapi.json",
+    "did": "did:web:nolawealthfinancial.com"
+  }
+}

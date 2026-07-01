@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "name": "stillos",
+  "display_name": "StillOS — Calibrated Prediction Signals + Notary",
+  "description": "Calibrated probability signals for Kalshi CPI and GDP prediction markets. Political Brier 0.0004 on 1,249 forward-committed predictions. Tamper-evident notarization. All outputs signed Ed25519. x402 USDC micropayments on Base.",
+  "homepage": "https://nolawealthfinancial.com",
+  "icon": "https://nolawealthfinancial.com/icon.png",
+  "categories": ["finance", "prediction-markets", "notarization", "ai-tools"],
+  "tags": ["kalshi", "cpi", "gdp", "prediction-markets", "brier-score", "x402", "notary", "ed25519"],
+  "server": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["/home/marcus/still-os-consciousness/core/stillos_mcp_server.cjs"],
+    "env": {
+      "SIGNAL_PORT": "8456",
+      "NOTARY_PORT": "8455",
+      "MIL_BASE": "https://nolawealthfinancial.com"
+    }
+  },
+  "tools": [
+    {
+      "name": "get_cpi_signal",
+      "description": "Calibrated P(YES) for Kalshi CPI markets. Cleveland Fed Nowcast. Signed receipt.",
+      "free": true,
+      "free_limit": "5/day"
+    },
+    {
+      "name": "get_gdp_signal",
+      "description": "Calibrated P(YES) for Kalshi GDP markets. Atlanta Fed GDPNow. Signed receipt.",
+      "free": true,
+      "free_limit": "5/day"
+    },
+    {
+      "name": "get_active_signals",
+      "description": "All signals with edge >= 10 cents, ranked. No payment required.",
+      "free": true
+    },
+    {
+      "name": "commit_claim",
+      "description": "Notarize any claim. Ed25519-signed hash-chained receipt. Permanently verifiable.",
+      "free": true,
+      "free_limit": "10/day"
+    },
+    {
+      "name": "verify_receipt",
+      "description": "Verify any StillOS receipt by hash. Always free.",
+      "free": true
+    },
+    {
+      "name": "grade_strategy",
+      "description": "Submit trade history → REAL_EDGE|REGIME_LUCK|NEGATIVE_EV verdict with signed receipt.",
+      "free": true,
+      "free_limit": "5/day"
+    },
+    {
+      "name": "get_trust_record",
+      "description": "Read honest Brier scores before trusting signals.",
+      "free": true
+    }
+  ],
+  "payment": {
+    "model": "x402",
+    "currency": "USDC",
+    "network": "base-mainnet",
+    "address": "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71",
+    "amount_per_call": "0.01",
+    "free_tier": "5/day per agent"
+  },
+  "trust": {
+    "brier_political": 0.0004,
+    "signing_key_fingerprint": "f3dcf55117d29e0a",
+    "verification": "https://nolawealthfinancial.com/notary/verify",
+    "agent_card": "https://nolawealthfinancial.com/.well-known/agent.json",
+    "openapi": "https://nolawealthfinancial.com/identity/openapi.json"
+  }
+}
