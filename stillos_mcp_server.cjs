@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 /**
  * stillos_mcp_server.cjs — StillOS MCP Server
