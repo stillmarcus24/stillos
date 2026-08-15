@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.stillmarcus24/stillos",
-  "title": "StillOS — Calibrated Prediction Signals + Notary",
+  "title": "StillOS \u2014 Calibrated Prediction Signals + Notary",
   "description": "Calibrated probability signals for Kalshi CPI and GDP prediction markets. Political Brier 0.0011 on 1,299 forward-committed predictions. Tamper-evident notarization. All outputs Ed25519-signed. x402 USDC micropayments on Base.",
   "version": "1.0.0",
   "repository": {
@@ -14,7 +14,11 @@
       "registryType": "npm",
       "identifier": "stillos-mcp",
       "version": "1.0.0",
-      "transport": { "type": "stdio" }
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx",
+      "runtimeArguments": []
     }
   ]
 }
