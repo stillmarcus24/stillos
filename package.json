@@ -15,6 +15,15 @@
   "bin": {
     "stillos-mcp": "stillos_mcp_server.cjs"
   },
+  "files": [
+    "stillos_mcp_server.cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "4.0.0-beta.20250505T195954"
+  },
   "author": "Marcus Still <stillmarcus24@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://nolawealthfinancial.com",
