@@ -1,7 +1,7 @@
 {
   "name": "stillos-mcp",
-  "version": "1.0.0",
-  "description": "StillOS MCP server — calibrated Kalshi prediction signals + tamper-evident notarization",
+  "version": "1.1.0",
+  "description": "StillOS MCP server \u2014 calibrated Kalshi prediction signals + tamper-evident notarization",
   "keywords": [
     "mcp",
     "mcp-server",
@@ -22,17 +22,20 @@
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "zod": "4.0.0-beta.20250505T195954"
+    "zod": "^4.6.7"
   },
   "author": "Marcus Still <stillmarcus24@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://nolawealthfinancial.com",
+  "homepage": "https://stillosdigitalholdings.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stillmarcus24/stillos.git"
+    "url": "git+https://github.com/stillmarcus24/stillos.git"
   },
   "engines": {
     "node": ">=18"
   },
-  "mcpName": "io.github.stillmarcus24/stillos"
+  "mcpName": "io.github.stillmarcus24/stillos",
+  "bugs": {
+    "url": "https://github.com/stillmarcus24/stillos/issues"
+  }
 }

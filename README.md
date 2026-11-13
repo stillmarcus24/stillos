@@ -36,7 +36,7 @@
       "command": "node",
       "args": ["stillos_mcp_server.cjs"],
       "env": {
-        "MIL_BASE": "https://nolawealthfinancial.com"
+        "MIL_BASE": "https://stillosdigitalholdings.com"
       }
     }
   }
@@ -45,18 +45,18 @@
 
 ## Endpoints
 
-- Agent card: https://nolawealthfinancial.com/.well-known/agent.json
-- OpenAPI: https://nolawealthfinancial.com/identity/openapi.json
-- Notary: https://nolawealthfinancial.com/notary/
-- Verify: https://nolawealthfinancial.com/verify
-- Reputation: https://nolawealthfinancial.com/reputation
+- Agent card: https://stillosdigitalholdings.com/.well-known/agent.json
+- OpenAPI: https://stillosdigitalholdings.com/identity/openapi.json
+- Notary: https://stillosdigitalholdings.com/notary/
+- Verify: https://stillosdigitalholdings.com/verify
+- Reputation: https://stillosdigitalholdings.com/reputation
 
 ## Verification
 
 Every receipt is independently verifiable:
 
 ```
-GET https://nolawealthfinancial.com/notary/verify?hash=<receipt_hash>
+GET https://stillosdigitalholdings.com/notary/verify?hash=<receipt_hash>
 ```
 
 No account required.

@@ -7,8 +7,8 @@ description: |
   independently verifiable. Free tier 5 signals/day. x402 USDC on Base
   for unlimited access.
 version: "1.0.0"
-publisher: "StillOS / nolawealthfinancial.com"
-homepage: "https://nolawealthfinancial.com"
+publisher: "StillOS / stillosdigitalholdings.com"
+homepage: "https://stillosdigitalholdings.com"
 license: "commercial"
 
 server:
@@ -19,7 +19,7 @@ server:
   env:
     SIGNAL_PORT: "8456"
     NOTARY_PORT: "8455"
-    MIL_BASE: "https://nolawealthfinancial.com"
+    MIL_BASE: "https://stillosdigitalholdings.com"
 
 tools:
   - name: get_cpi_signal
@@ -95,7 +95,7 @@ payment:
   currency: USDC
   network: base-mainnet
   free_tier: "5 signals/day per agent identity"
-  paid_tier: "$0.01 USDC per signal beyond free tier"
+  paid_tier: "$0.05 USDC per signal beyond free tier"
   payment_address: "0xfAB07d26F7627fc4cE459ecf90d7E015F7eEcE71"
 
 trust:
@@ -103,4 +103,4 @@ trust:
   n_predictions: 1249
   n_settled: 241
   signing_key_fingerprint: "f3dcf55117d29e0a"
-  verification_url: "https://nolawealthfinancial.com/notary/verify"
+  verification_url: "https://stillosdigitalholdings.com/notary/verify"

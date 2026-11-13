@@ -34,7 +34,7 @@ const http  = require('http');
 
 const SIGNAL_PORT = parseInt(process.env.SIGNAL_PORT || '8456', 10);
 const NOTARY_PORT = parseInt(process.env.NOTARY_PORT || '8455', 10);
-const BASE        = process.env.MIL_BASE || 'https://nolawealthfinancial.com';
+const BASE        = process.env.MIL_BASE || 'https://stillosdigitalholdings.com';
 
 // ── internal HTTP helpers ──────────────────────────────────────────────────────
 
